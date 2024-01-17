@@ -22,7 +22,7 @@ SUBROUTINE readinput
   integer :: fid,i,j
   namelist /fitting/ npoints, enfDiab, epmax, w_energy, w_grad, w_fij, &
   gradcutoff, cpcutoff, deggrdbinding, deg_cap, lambda, eshift, energyT, &
-  highEScale, nrmediff, ediffcutoff,fixref
+  highEScale, nrmediff, ediffcutoff, fixref, natoms, nstates
 
   fixref=.true.
   call FLUnit(fid)
@@ -41,12 +41,10 @@ SUBROUTINE readinput
   cpcutoff=cpcutoff/au2cm
 
   !progdata
-  natoms=11
   printlvl=5
   nvibs=3*natoms-6
 
   !hddata
-  nstates=2
   ncoord=DefineInternalCoordinate()
   print*,'System has ',ncoord, 'internal degrees of freedom.'
   if(ncoord.ne.nvibs) stop 'ncoord.ne.nvibs!'

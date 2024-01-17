@@ -610,8 +610,9 @@ subroutine setrefpt
   location=WhichExpansionBasis(order,indice)
   if(location.gt.0) then
     print*,'Zeroth order location: ',location
-    Hd_HdEC(1,1)%Array(location)=dispgeoms(enfdiab)%energy(1,1)
-    Hd_HdEC(2,2)%Array(location)=dispgeoms(enfdiab)%energy(2,2)
+    do i=1,nstates
+      Hd_HdEC(i,i)%Array(location)=dispgeoms(enfdiab)%energy(i,i)
+    end do
   else
     stop 'The current basis space does not contain zeroth order!!!'
   end if
@@ -623,10 +624,15 @@ subroutine setrefpt
     location=WhichExpansionBasis(order,indice)
     if(location.gt.0) then
       print*,'First order location: ',location
-      Hd_HdEC(1,1)%Array(location)=dispgeoms(enfdiab)%igrads(k,1,1)
-      Hd_HdEC(2,2)%Array(location)=dispgeoms(enfdiab)%igrads(k,2,2)
-      Hd_HdEC(1,2)%Array(location)=dispgeoms(enfdiab)%igrads(k,1,2)
-      Hd_HdEC(2,1)%Array(location)=dispgeoms(enfdiab)%igrads(k,1,2)
+      do i=1,nstates
+        Hd_HdEC(i,i)%Array(location)=dispgeoms(enfdiab)%igrads(k,i,i)
+      end do
+      do j=2,nstates
+        do i=1,j-1
+          Hd_HdEC(i,j)%Array(location)=dispgeoms(enfdiab)%igrads(k,i,j)
+          Hd_HdEC(j,i)%Array(location)=dispgeoms(enfdiab)%igrads(k,i,j)
+        end do
+      end do
     else
       print*,'The current basis space does not contain first order: ',indice(1)
       stop
