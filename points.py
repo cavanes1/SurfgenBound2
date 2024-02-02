@@ -1,5 +1,3 @@
-nstates = 3
-
 # import modules
 import numpy as np
 
