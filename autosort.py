@@ -1,6 +1,6 @@
 # parameters
-automatic = True
-preserve = 3
+automatic = False
+preserve = 0
 
 # import modules
 import numpy as np
@@ -129,3 +129,8 @@ for name in newnames:
         g.write(gwrite)
         f.close()
         g.close()
+
+os.system("mv names.all names.old")
+os.system("mv names.new names.all")
+
+print("\nNOW YOU MUST RUN POINTS.PY\n")
