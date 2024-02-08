@@ -16,7 +16,7 @@ Extracts the necessary data for Surfgen
 Identifies quasidegeneracies from energy.all to generate points.in
 
 ### autosort.py
-Reorders the geometries used by Surfgen according to either an input list of names or automatically by absolute energy error.
+Reorders the geometries used by Surfgen according to an input list of names.
 After running, one must run points.py.
 
 ## Errors
