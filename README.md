@@ -1,5 +1,7 @@
 # SurfgenBound 2
-This is an updated version of SurfgenBound. This program generates a polynomial fit to ab initio points via diabatization by ansatz. The initial version was provided by Yafu Guan.
+This is an updated version of SurfgenBound. This program generates a least-squares polynomial fit to ab initio points via diabatization by ansatz.
+The generated surface can be analyzed using [these tools](https://github.com/cavanes1/PES-analysis).
+The initial commit version was provided by Yafu Guan.
 
 The provided makefile runs succesfully on ARCH.
 
@@ -19,7 +21,26 @@ Identifies quasidegeneracies from energy.all to generate points.in
 Reorders the geometries used by Surfgen according to an input list of names.
 After running, one must run points.py.
 
-## Errors
+## Input and output
+
+### Required input files
+* basis.in
+* intcfl
+* Hd.CheckPoint.old (if using existing surface as starting point)
+* fit.in
+* points.in
+* energy.all
+* geom.all
+* cartgrd.drt1.state$.all
+* cartgrd.nad.drt1.state$.drt1.state$.all
+
+### Generated output files
+* Hd.CheckPoint
+* surfgen.log
+
+### Errors
+Examine output surface quickly using `grep Epoch surfgen.log`
+
 
 | Symbol  | Variable | Meaning |
 | ------------- | ------------- | ------------- |
