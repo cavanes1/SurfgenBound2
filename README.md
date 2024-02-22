@@ -49,7 +49,7 @@ After running, one must run points.py.
 | deggrdbinding |  |
 | deg_cap |  |
 | lambda | Has to do with regularization |
-| eshift | Uniform shift on ab initio energies (Ha) |
+| eshift | Uniform shift on ab initio energies |
 | energyT | Threshold energy above which gradients/energies will be scaled down |
 | highEScale |  The scaling factor for these high energy data |
 | nrmediff |  |
