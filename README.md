@@ -34,6 +34,30 @@ After running, one must run points.py.
 * cartgrd.drt1.state$.all
 * cartgrd.nad.drt1.state$.drt1.state$.all
 
+### fit.in parameters
+
+| Keyword  | Meaning |
+| ------------- | ------------- |
+| npoints | Number of points to fit |
+| enfDiab | Point number of reference point |
+| epmax | Maximum number of epochs |
+| w_energy | Energy weights |
+| w_grad | Gradient weights |
+| w_fij | Derivative coupling weights |
+| gradcutoff | when <=0, value of gradcutoff is used instead |
+| cpcutoff |  |
+| deggrdbinding |  |
+| deg_cap |  |
+| lambda | Has to do with regularization |
+| eshift | Uniform shift on ab initio energies (Ha) |
+| energyT | Threshold energy above which gradients/energies will be scaled down |
+| highEScale |  The scaling factor for these high energy data |
+| nrmediff |  |
+| ediffcutoff |  |
+| fixref | Fix the coeffs of zeroth and first order if .true. |
+| natoms | Number of atoms |
+| nstates | Number of electronic states |
+
 ### Generated output files
 * Hd.CheckPoint
 * surfgen.log
