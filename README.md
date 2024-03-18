@@ -1,4 +1,6 @@
 # SurfgenBound 2
+Property of the Yarkony Group at Johns Hopkins University.
+
 This is an updated version of SurfgenBound. This program generates a least-squares polynomial fit to ab initio points via diabatization by ansatz.
 The generated surface can be analyzed using [these tools](https://github.com/cavanes1/PES-analysis).
 The initial commit version was provided by Yafu Guan.
